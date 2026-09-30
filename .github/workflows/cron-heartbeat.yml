@@ -2,7 +2,7 @@ name: Cron Heartbeat
 
 on:
   schedule:
-    - cron: '31 17 * * *'
+    - cron: '7,17,27,37,47,57 * * * *'
 
   workflow_dispatch:
 
@@ -14,5 +14,6 @@ jobs:
       - name: Heartbeat
         run: |
           echo "SCHEDULE FUNCIONOU"
+          echo "Event: ${{ github.event_name }}"
           echo "UTC:"
           date -u
